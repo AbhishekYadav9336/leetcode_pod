@@ -11,8 +11,9 @@ Input: nums = [1,2,3,4,5]
 Output: 5
 Explanation: All elements of the array have a frequency of 1 which is the maximum.
 So the number of elements in the array with maximum frequency is 5.
-solution-class Solution {
-public:
+solution---
+    class Solution {
+  public:
     int maxFrequencyElements(vector<int>& nums) {
         map<int, int> mp;
         int maxi=INT_MIN, c=0;
@@ -21,6 +22,15 @@ public:
             mp[nums[i]]++;
             maxi=max(maxi, mp[nums[i]]);
         }
+         // int a=0;
+        // for(int j=0;j<n;j++)
+        // {
+        //     if(mp[nums[j]]==maxi)
+        //     {
+        //            a=a+1;
+        //     }
+        // }
+        // return a;
         for(auto it: mp){
             if(it.second==maxi)
             c+=it.second;
